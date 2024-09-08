@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Question</title>
+    <style>
+        body {
+            background-image: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/458653509_1751516488989658_2052590608165620436_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=DjMndyY-4ZYQ7kNvgEP00XP&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_Q7cD1QFZcSDctejvSKfVwaDvWGsd-QEtQprGrh0PTo1X686gzw&oe=670504B6');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        .button-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        button {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #message {
+            display: none;
+            font-size: 2em;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            animation: fadeIn 2s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Do you love me?</h1>
+    <div class="button-container">
+        <button id="yesButton" style="top: 20%; left: 30%;">Ya I love you</button>
+        <button id="noButton" style="top: 50%; left: 60%;">No</button>
+    </div>
+    <div id="message">I love you too, my daughter</div>
+
+    <script>
+        document.getElementById('yesButton').onclick = function() {
+            document.getElementById('message').style.display = 'block';
+        };
+
+        document.getElementById('noButton').onclick = function() {
+            var button = document.getElementById('noButton');
+            var randomTop = Math.floor(Math.random() * 80) + '%';
+            var randomLeft = Math.floor(Math.random() * 80) + '%';
+            button.style.top = randomTop;
+            button.style.left = randomLeft;
+        };
+    </script>
+</body>
+</html>
